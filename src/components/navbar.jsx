@@ -7,7 +7,7 @@ export default function Navbar(){
           <span>Lapis Net Data Editor</span>
         </a>
         <input id="bmenub" type="checkbox" class="show" />
-        <label for="bmenub" class="burger pseudo button">menu</label>
+        <label for="bmenub" class="burger pseudo button">&#8801;</label>
         <div class='menu'>
             <a onClick={() => linkTo('/')}>Home</a>
         </div>

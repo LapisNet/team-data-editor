@@ -1,18 +1,17 @@
 import { resetView } from 'mettle';
-import { initRouter } from 'mettle-router';
-
-import Home from '../views/home';
-import Error404 from '../views/404';
-
-const paths = [
-  { path: '/', template: Home },
-  { path: '/404', template: Error404 }
-]
+import { initRouter, hashChange, linkTo } from 'mettle-router';
+import { paths } from './router';
 
 const router = initRouter(
   paths,
   resetView,
   '#router'
 );
+
+hashChange(() => {
+  if(!paths.map(({path}) => path).includes(location.hash.slice(1))) {
+    linkTo('/404')
+  }
+})
 
 export default router;

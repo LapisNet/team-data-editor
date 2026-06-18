@@ -2,8 +2,8 @@ import { linkTo } from 'mettle-router';
 
 export default function Home() {
   const editors = [
-    {title: 'Members', description: 'LapisNet 成员数据', linkTo: '/404'},
-    {title: 'Projects', description: 'LapisNet 项目数据', linkTo: '/404'},
+    {title: 'Members', description: 'LapisNet 成员数据', linkTo: '/members'},
+    {title: 'Projects', description: 'LapisNet 项目数据', linkTo: '/projects'},
     {title: 'Github', description: 'LapisNet 官方Github', hrefTo: 'https://github.com/LapisNet'}
   ]
   return <>
