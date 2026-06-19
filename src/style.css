@@ -29,9 +29,32 @@
     margin-right: 0.5em;
 }
 
+.copyright {
+    color: darkgray;
+    display: block;
+    /* text-align: center; */
+}
+
+.padding-auto {
+    padding: 5px;
+}
+
+.top-layer {
+    z-index: 1145141919810;
+}
+
 @media screen and (orientation: portrait) {
-    .image {
-        width: auto;
-        height: 100%;
+    .avatar {
+        height: 179px;
     }
+    .padding-auto {
+        padding: none;
+    }
+    .hide-on-mobile {
+        display: none;
+    }
+    /* .tool-border {
+        border: solid 0.5px black;
+        border-radius: 5px;
+    } */
 }

@@ -12,6 +12,8 @@
     "vite-plugin-mettle": "^1.9.0"
   },
   "dependencies": {
+    "@yaohaixiao/message.js": "^0.3.1",
+    "bootstrap-icons": "^1.13.1",
     "mettle": "^1.8.3",
     "mettle-router": "^0.6.2",
     "picnic": "^7.1.0"
