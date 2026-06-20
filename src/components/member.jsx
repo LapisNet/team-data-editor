@@ -1,6 +1,8 @@
+import defaultAvatar from '../images/default-member-compressed.png'
+
 export default function MemberProfile(member) {
     return <article class='card'>
-        <div class='avatar'><img src={member.avatar} class='image' /></div>
+        <div class='avatar'><img src={member.avatar || defaultAvatar} class='image' /></div>
         <footer>
             <h3 style='white-space: nowrap; overflow: auto'>
                 <span class='role'>{member.role}</span>

@@ -2,21 +2,22 @@ import cat from '../libs/cat'
 import MemberProfile from '../components/member'
 import { effect } from 'mettle'
 import { isMobile } from '../libs/utils'
-import msg from '@yaohaixiao/message.js/message.js'
+import msg from '../libs/message'
+import ToolBar from '../components/toolbar'
+import { GITHUB_AGENT } from '../config'
 
 export default function Members() {
     var members = $signal([])
-    var loading = msg.info({message: '正在获取数据中...', customClass: 'top-layer', duration: 0})
-    const agent = 'https://ghproxy.net/'
-    cat.catRepo('src/members.json', agent)
+    var loading = msg.loading('正在获取数据中...')
+    cat.catRepo('src/members.json', GITHUB_AGENT)
       .then(data => {
         members = data
         loading.close()
-        msg.success({message: '数据获取成功', customClass: 'top-layer'})
+        msg.success('数据获取成功')
       })
       .catch(error => {
         loading.close()
-        msg.error({message: '看起来出了一点小问题', customClass: 'top-layer'})
+        msg.error('看起来出了一点小问题')
         console.error(error)
       })
     
@@ -29,14 +30,7 @@ export default function Members() {
     ]
 
     return <>
-      <div class='flex four center'>
-        {buttons.map(btn => (
-          <button class={btn.class} data-tooltip={btn.name} onClick={btn.click}>
-            <span class={'bi-' + btn.icon}></span>
-            <span>{' ' + btn.name}</span>
-          </button>
-        ))}
-      </div>
+      <ToolBar length={members.length} buttons={buttons} />
       <h3><>成员列表 Members List </><span class='dark'>(点击编辑)</span></h3>
       <div class={isMobile() ? 'flex one' : 'flex four'}>
         {members.map(member => <div>{MemberProfile(member)()}</div>)}

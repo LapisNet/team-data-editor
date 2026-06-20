@@ -9,6 +9,10 @@
     align-items: center;
 }
 
+.cover {
+    height: 250px;
+}
+
 .image {
     width: 100%;
 }
@@ -43,6 +47,16 @@
     z-index: 1145141919810;
 }
 
+.nowarp {
+    white-space: nowrap;
+    overflow: auto;
+}
+
+.project {
+    height: 525px;
+    overflow: auto;
+}
+
 @media screen and (orientation: portrait) {
     .avatar {
         height: 179px;
@@ -52,6 +66,9 @@
     }
     .hide-on-mobile {
         display: none;
+    }
+    .project {
+        height: auto;
     }
     /* .tool-border {
         border: solid 0.5px black;

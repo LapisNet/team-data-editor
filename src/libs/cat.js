@@ -1,9 +1,11 @@
+import json5 from "json5"
+
 async function cat(url){
     return await (await fetch(url)).text()
 }
 
 async function catJson(url) {
-    return JSON.parse(await cat(url))
+    return json5.parse(await cat(url))
 }
 
 async function catRepo(file, agent = '') {
