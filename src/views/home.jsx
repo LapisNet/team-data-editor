@@ -9,7 +9,7 @@ export default function Home() {
   ]
   return <>
    <h3>编辑 LapisNet 组织数据</h3>
-   <div class={isMobile() ? 'flex two' : 'flex three'}>
+   <div class={isMobile() ? 'flex one' : 'flex three'}>
    {editors.map((editor) => (
       <div class='padding-auto'>
         <article class='card'>

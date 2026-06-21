@@ -9,7 +9,7 @@ export default function ToolBar({buttons, length}) {
                 <h4>工具栏</h4>
             </header>
             <footer>
-                <div class={isMobile() ? 'flex one' : 'flex four'}>
+                <div class={isMobile() ? 'flex one' : 'flex five center'}>
                     {(buttons || []).map(btn => (
                         <button class={btn.class} data-tooltip={btn.name} onClick={btn.click}>
                             <span class={'bi-' + btn.icon}></span>

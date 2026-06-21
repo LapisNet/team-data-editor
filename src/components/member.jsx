@@ -1,6 +1,6 @@
 import defaultAvatar from '../images/default-member-compressed.png'
 
-export default function MemberProfile(member) {
+export default function MemberProfile({member}) {
     return <article class='card'>
         <div class='avatar'><img src={member.avatar || defaultAvatar} class='image' /></div>
         <footer>

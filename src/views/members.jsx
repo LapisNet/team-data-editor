@@ -24,6 +24,7 @@ export default function Members() {
     const emptyfunc = () => void 0
     const buttons = [
       {name: '增加成员信息', class: 'pseudo', icon: 'cloud-arrow-down', click: emptyfunc},
+      {name: '加载本地数据', class: 'pseudo', icon: 'arrow-clockwise', click: emptyfunc},
       {name: '保存修改到本地', class: 'pseudo', icon: 'save', click: emptyfunc},
       {name: '编辑JSON', class: 'pseudo', icon: 'filetype-json', click: emptyfunc},
       {name: '提交修改', class: 'pseudo', icon: 'cloud-arrow-up', click: emptyfunc},
@@ -33,7 +34,7 @@ export default function Members() {
       <ToolBar length={members.length} buttons={buttons} />
       <h3><>成员列表 Members List </><span class='dark'>(点击编辑)</span></h3>
       <div class={isMobile() ? 'flex one' : 'flex four'}>
-        {members.map(member => <div>{MemberProfile(member)()}</div>)}
+        {members.map(member => <div><MemberProfile member={member} /></div>)}
       </div>
     </>
 }
